@@ -1,0 +1,34 @@
+{
+  "identifier" : "Products",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : true,
+      "internalID" : "6531028491",
+      "localizations" : [
+        {
+          "description" : "Unlimited saved palettes and shareable contrast reports for labels, thread, paint, and signage.",
+          "displayName" : "Scout Unlock",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.geeksdobyte.ContrastScout.unlock",
+      "referenceName" : "Scout Unlock",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6740000001",
+    "_developerTeamID" : "AU259WM5G7"
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

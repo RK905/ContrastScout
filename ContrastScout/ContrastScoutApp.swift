@@ -1,32 +1,21 @@
-//
-//  ContrastScoutApp.swift
-//  ContrastScout
-//
-//  Created by Rayen Kamta on 8/16/26.
-//
-
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 @main
 struct ContrastScoutApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    @State private var unlockStore = UnlockStore()
+    @State private var session = ScoutSession()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environment(unlockStore)
+                .environment(session)
+                .preferredColorScheme(.light)
+                .task {
+                    await unlockStore.load()
+                }
         }
-        .modelContainer(sharedModelContainer)
+        .modelContainer(for: SavedSwatch.self)
     }
 }

@@ -1,0 +1,12 @@
+.DS_Store
+xcuserdata/
+DerivedData/
+build/
+*.xcuserstate
+.wrangler/
+node_modules/
+website/node_modules/
+.env
+.dev.vars
+*.ipa
+*.dSYM.zip

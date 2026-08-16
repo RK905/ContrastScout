@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Contrast Scout screenshots</title>
+  <style>
+    :root {
+      --paper: #f6f1e8;
+      --ink: #1c2430;
+      --forest: #2f6f4e;
+      --terracotta: #c45c3e;
+      --gold: #c4a35a;
+      --stitch: #8b7a61;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: ui-rounded, "SF Pro Rounded", system-ui, sans-serif; background: #111; color: var(--ink); }
+    .shot { width: 1290px; height: 2796px; background: var(--paper); position: relative; overflow: hidden; }
+    .ipad { width: 2048px; height: 2732px; }
+    .status { height: 84px; display: flex; justify-content: space-between; padding: 28px 48px 0; font-weight: 700; font-size: 28px; }
+    .title { text-align: center; font-size: 40px; font-weight: 800; margin: 8px 0 24px; }
+    .pad { padding: 0 48px 48px; }
+    .finder { height: 1320px; border-radius: 56px; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; position: relative; }
+    .navy { background: #1a2a4a; }
+    .cream { background: #f1e5c8; }
+    .reticle {
+      position: absolute; left: 50%; top: 50%; width: 180px; height: 180px;
+      transform: translate(-50%, -50%); border: 6px solid var(--gold); border-radius: 50%;
+      box-shadow: 0 0 0 18px rgba(196,163,90,.18);
+    }
+    .slots { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: -140px; position: relative; }
+    .slot, .card { background: rgba(255,255,255,.78); border-radius: 36px; padding: 28px; }
+    .chip { height: 72px; border-radius: 18px; margin-bottom: 12px; }
+    .cta { margin-top: 24px; background: var(--forest); color: white; text-align: center; padding: 32px; border-radius: 999px; font-size: 34px; font-weight: 750; }
+    .ratio { font-size: 96px; font-weight: 800; }
+    .badge { display: inline-block; background: rgba(47,111,78,.12); color: var(--forest); padding: 10px 18px; border-radius: 999px; font-weight: 700; }
+    .tabs { position: absolute; bottom: 0; left: 0; right: 0; height: 160px; display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; padding-top: 28px; background: rgba(255,255,255,.9); font-size: 22px; color: var(--stitch); }
+    .tabs .on { color: var(--forest); font-weight: 800; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .sw { height: 220px; border-radius: 28px; }
+    h2 { font-size: 48px; margin: 0 0 12px; }
+    p { font-size: 32px; line-height: 1.35; color: rgba(28,36,48,.78); }
+    .ipad-wrap { display: grid; grid-template-columns: 280px 1fr 720px; height: 2732px; }
+    .side { background: #efe7d8; padding: 80px 28px; }
+    .side button { display: block; width: 100%; text-align: left; padding: 22px; border: 0; background: var(--forest); color: white; border-radius: 16px; font-size: 28px; margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <section class="shot" id="s1">
+    <div class="status"><span>9:41</span><span>Contrast Scout</span></div>
+    <div class="title">Scout</div>
+    <div class="pad">
+      <div class="finder"><div class="navy"></div><div class="cream"></div><div class="reticle"></div></div>
+      <div class="slots">
+        <div class="slot"><div class="chip navy"></div>A · Navy label<br>#1A2A4A</div>
+        <div class="slot"><div class="chip cream"></div>B · Cream thread<br>#F1E5C8</div>
+      </div>
+      <div class="cta">Sample color B</div>
+    </div>
+    <div class="tabs"><div class="on">Scout</div><div>Notebook</div><div>Simulate</div><div>More</div></div>
+  </section>
+</body>
+</html>
