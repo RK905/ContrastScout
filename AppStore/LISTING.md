@@ -139,8 +139,15 @@ iPhone 6.7":
 4. 04-iphone-simulate.png — color-vision simulation
 5. 05-iphone-unlock.png — Scout Unlock paywall
 
-iPad 13":
-1. 01-ipad-scout.png — camera + result side by side
+iPad 13" (2064×2752 portrait, 2752×2064 landscape) — `AppStore/ipad-13/`:
+1. 01-portrait-scout.png — sidebar + camera finder + contrast result
+2. 02-portrait-notebook.png — saved craft swatches
+3. 03-portrait-simulate.png — deuteranopia preview
+4. 04-landscape-scout.png — wide camera + result
+5. 05-landscape-notebook.png — four-up swatch notebook
+
+iPad 12.9" (2048×2732 portrait, 2732×2048 landscape) — `AppStore/ipad-129/`:
+same five screens, resized to the 12.9" pixel sizes.
 
 ## Version
 

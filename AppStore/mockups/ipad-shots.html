@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Contrast Scout iPad screenshots</title>
+  <style>
+    :root {
+      --paper: #f6f1e8;
+      --paper-deep: #ece3d5;
+      --ink: #1c2430;
+      --ink-soft: rgba(28, 36, 48, 0.72);
+      --forest: #2f6f4e;
+      --forest-deep: #1f4f37;
+      --gold: #c4a35a;
+      --stitch: #8b7a61;
+      --navy: #1a2a4a;
+      --cream: #f1e5c8;
+      --white: rgba(255, 255, 255, 0.82);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #111;
+      color: var(--ink);
+      font-family: ui-rounded, "SF Pro Rounded", "SF Pro Display", system-ui, sans-serif;
+    }
+    .portrait { width: 2064px; height: 2752px; }
+    .landscape { width: 2752px; height: 2064px; }
+    .shot {
+      background: var(--paper);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 420px 1fr;
+    }
+    .sidebar {
+      background: linear-gradient(180deg, #efe7d8, #e7dccb);
+      padding: 72px 28px 40px;
+      border-right: 1px solid rgba(139, 122, 97, 0.22);
+    }
+    .brand {
+      font-size: 34px;
+      font-weight: 800;
+      margin: 0 12px 36px;
+      white-space: nowrap;
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      font-size: 28px;
+      color: var(--ink-soft);
+      margin-bottom: 8px;
+    }
+    .nav-item.on {
+      background: var(--forest);
+      color: #fff;
+      font-weight: 700;
+    }
+    .glyph { width: 32px; text-align: center; font-size: 30px; }
+    .detail { display: flex; flex-direction: column; min-width: 0; }
+    .status {
+      height: 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 0 36px 8px;
+      font-weight: 700;
+      font-size: 24px;
+    }
+    .navbar {
+      height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 36px;
+      font-size: 40px;
+      font-weight: 800;
+    }
+    .tools { display: flex; gap: 22px; font-size: 32px; color: var(--forest); }
+    .body { flex: 1; padding: 12px 32px 36px; min-height: 0; }
+    .wide { display: grid; grid-template-columns: 1.35fr 0.85fr; gap: 28px; height: 100%; }
+    .finder {
+      height: 100%;
+      min-height: 900px;
+      border-radius: 44px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 18px 40px rgba(28, 36, 48, 0.12);
+    }
+    .navy { background: var(--navy); }
+    .cream { background: var(--cream); }
+    .barn { background: #b03026; }
+    .sage { background: #8ba582; }
+    .deut-a { background: #2c3348; }
+    .deut-b { background: #e8dcc0; }
+    .reticle {
+      position: absolute;
+      left: 50%;
+      top: 46%;
+      width: 160px;
+      height: 160px;
+      transform: translate(-50%, -50%);
+      border: 6px solid var(--gold);
+      border-radius: 50%;
+      box-shadow: 0 0 0 16px rgba(196, 163, 90, 0.16);
+    }
+    .reticle::after {
+      content: "";
+      position: absolute;
+      inset: 58px;
+      border-radius: 50%;
+      background: linear-gradient(90deg, var(--navy) 50%, var(--cream) 50%);
+      border: 4px solid #fff;
+    }
+    .capture {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      background: rgba(20, 24, 30, 0.42);
+      backdrop-filter: blur(16px);
+      border-radius: 28px;
+      padding: 18px;
+      color: #fff;
+    }
+    .slots { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .slot {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(0, 0, 0, 0.28);
+      border-radius: 16px;
+      padding: 12px 14px;
+      font-size: 22px;
+    }
+    .slot.on { background: var(--forest); }
+    .mini { width: 44px; height: 44px; border-radius: 10px; }
+    .cta {
+      margin-top: 14px;
+      background: var(--forest);
+      text-align: center;
+      padding: 18px;
+      border-radius: 999px;
+      font-size: 26px;
+      font-weight: 750;
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid rgba(139, 122, 97, 0.18);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 10px 28px rgba(28, 36, 48, 0.06);
+    }
+    .swatches { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .chip { height: 88px; border-radius: 16px; }
+    .label { font-size: 22px; font-weight: 700; margin-top: 8px; }
+    .hex { font-size: 20px; font-family: ui-monospace, Menlo, monospace; color: var(--ink-soft); }
+    .ratio { font-size: 84px; font-weight: 800; letter-spacing: -2px; margin: 18px 0 8px; }
+    .badge {
+      display: inline-block;
+      background: rgba(47, 111, 78, 0.12);
+      color: var(--forest);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 22px;
+    }
+    .copy { font-size: 26px; line-height: 1.35; color: var(--ink-soft); margin: 16px 0; }
+    .preview {
+      background: var(--cream);
+      color: var(--navy);
+      text-align: center;
+      padding: 22px;
+      border-radius: 16px;
+      font-weight: 800;
+      letter-spacing: 0.28em;
+      font-size: 28px;
+      margin: 12px 0;
+    }
+    .checks { font-size: 22px; line-height: 1.7; }
+    .ok { color: var(--forest); }
+    .fine { font-size: 18px; color: var(--stitch); margin-top: 14px; }
+    .actions { display: flex; gap: 12px; margin-top: 16px; }
+    .pill {
+      flex: 1;
+      text-align: center;
+      padding: 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 22px;
+    }
+    .filled { background: var(--forest); color: #fff; }
+    .outline { color: var(--forest-deep); box-shadow: inset 0 0 0 2px var(--forest); }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .sw { height: 180px; border-radius: 22px; }
+    h2 { font-size: 36px; margin: 0 0 10px; }
+    p { margin: 0; }
+    .seg {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: rgba(255,255,255,0.7);
+      border-radius: 16px;
+      padding: 6px;
+      margin-bottom: 18px;
+      font-size: 22px;
+      text-align: center;
+    }
+    .seg span { padding: 12px 8px; border-radius: 12px; color: var(--ink-soft); }
+    .seg .on { background: #fff; color: var(--ink); font-weight: 700; box-shadow: 0 4px 10px rgba(28,36,48,0.08); }
+    .landscape .sidebar { padding-top: 56px; }
+    .landscape .finder { min-height: 0; }
+    .landscape .chip { height: 72px; }
+    .landscape .ratio { font-size: 72px; }
+  </style>
+</head>
+<body>
+  <section class="shot portrait" id="p-scout">
+    <aside class="sidebar">
+      <div class="brand">Contrast Scout</div>
+      <div class="nav-item on"><span class="glyph">⌖</span>Scout</div>
+      <div class="nav-item"><span class="glyph">☰</span>Notebook</div>
+      <div class="nav-item"><span class="glyph">◎</span>Simulate</div>
+      <div class="nav-item"><span class="glyph">···</span>More</div>
+    </aside>
+    <main class="detail">
+      <div class="status"><span>9:41</span><span>●●●● Wi‑Fi</span></div>
+      <div class="navbar"><span>Scout</span><div class="tools">🔦 🖼 🎨</div></div>
+      <div class="body">
+        <div class="wide">
+          <div class="finder">
+            <div class="navy"></div>
+            <div class="cream"></div>
+            <div class="reticle"></div>
+            <div class="capture">
+              <div class="slots">
+                <div class="slot"><div class="mini navy"></div>A · Navy label<br>#1A2A4A</div>
+                <div class="slot on"><div class="mini cream"></div>B · Cream thread<br>#F1E5C8</div>
+              </div>
+              <div class="cta">Sample color B</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="swatches">
+              <div><div class="chip navy"></div><div class="label">Navy label</div><div class="hex">#1A2A4A</div></div>
+              <div><div class="chip cream"></div><div class="label">Cream thread</div><div class="hex">#F1E5C8</div></div>
+            </div>
+            <div class="ratio">12.63:1</div>
+            <div class="badge">Easy to tell apart</div>
+            <p class="copy">Easy to tell apart, even on small labels or fine thread. A strong pairing for tags, signs, and high-visibility stitching.</p>
+            <div class="preview">WORKSHOP</div>
+            <div class="checks">
+              <div class="ok">✓ AA body / labels 4.5:1</div>
+              <div class="ok">✓ AA large lettering 3:1</div>
+              <div class="ok">✓ AAA body / labels 7:1</div>
+              <div class="ok">✓ AAA large lettering 4.5:1</div>
+            </div>
+            <p class="fine">Readings are estimates affected by lighting. Contrast Scout is not a safety certification.</p>
+            <div class="actions">
+              <div class="pill outline">Swap</div>
+              <div class="pill filled">Share report</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <section class="shot portrait" id="p-notebook">
+    <aside class="sidebar">
+      <div class="brand">Contrast Scout</div>
+      <div class="nav-item"><span class="glyph">⌖</span>Scout</div>
+      <div class="nav-item on"><span class="glyph">☰</span>Notebook</div>
+      <div class="nav-item"><span class="glyph">◎</span>Simulate</div>
+      <div class="nav-item"><span class="glyph">···</span>More</div>
+    </aside>
+    <main class="detail">
+      <div class="status"><span>9:41</span><span>●●●● Wi‑Fi</span></div>
+      <div class="navbar"><span>Notebook</span><div class="tools" style="font-size:26px;font-weight:700;">Save current</div></div>
+      <div class="body">
+        <div class="card" style="margin-bottom:24px;">
+          <h2>Physical swatches, kept on device</h2>
+          <p class="copy">Free notebook holds 8 swatches. Scout Unlock adds unlimited saves and shareable reports.</p>
+        </div>
+        <div class="grid">
+          <div class="card"><div class="sw navy"></div><h2>Navy label</h2><p class="hex">#1A2A4A</p></div>
+          <div class="card"><div class="sw cream"></div><h2>Cream thread</h2><p class="hex">#F1E5C8</p></div>
+          <div class="card"><div class="sw barn"></div><h2>Barn-red paint</h2><p class="hex">#B03026</p></div>
+          <div class="card"><div class="sw sage"></div><h2>Sage signage</h2><p class="hex">#8BA582</p></div>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <section class="shot portrait" id="p-simulate">
+    <aside class="sidebar">
+      <div class="brand">Contrast Scout</div>
+      <div class="nav-item"><span class="glyph">⌖</span>Scout</div>
+      <div class="nav-item"><span class="glyph">☰</span>Notebook</div>
+      <div class="nav-item on"><span class="glyph">◎</span>Simulate</div>
+      <div class="nav-item"><span class="glyph">···</span>More</div>
+    </aside>
+    <main class="detail">
+      <div class="status"><span>9:41</span><span>●●●● Wi‑Fi</span></div>
+      <div class="navbar"><span>Simulate</span><div></div></div>
+      <div class="body">
+        <div class="seg"><span>Typical vision</span><span>Protanopia</span><span class="on">Deuteranopia</span><span>Tritanopia</span></div>
+        <p class="copy" style="margin-bottom:20px;">Reduced green</p>
+        <div class="grid" style="margin-bottom:24px;">
+          <div class="card"><div class="sw navy"></div><div class="label">Original A</div></div>
+          <div class="card"><div class="sw cream"></div><div class="label">Original B</div></div>
+          <div class="card"><div class="sw deut-a"></div><div class="label">Deuteranopia A</div></div>
+          <div class="card"><div class="sw deut-b"></div><div class="label">Deuteranopia B</div></div>
+        </div>
+        <div class="card">
+          <div class="ratio">11.40:1</div>
+          <div class="badge">Easy to tell apart</div>
+          <p class="copy">Use these previews when choosing thread on fabric, paint on wood, or vinyl on a sign — not as a medical test.</p>
+          <p class="fine">Readings are estimates affected by lighting. Contrast Scout is not a safety certification.</p>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <section class="shot landscape" id="l-scout">
+    <aside class="sidebar">
+      <div class="brand">Contrast Scout</div>
+      <div class="nav-item on"><span class="glyph">⌖</span>Scout</div>
+      <div class="nav-item"><span class="glyph">☰</span>Notebook</div>
+      <div class="nav-item"><span class="glyph">◎</span>Simulate</div>
+      <div class="nav-item"><span class="glyph">···</span>More</div>
+    </aside>
+    <main class="detail">
+      <div class="status"><span>9:41</span><span>●●●● Wi‑Fi</span></div>
+      <div class="navbar"><span>Scout</span><div class="tools">🔦 🖼 🎨</div></div>
+      <div class="body">
+        <div class="wide">
+          <div class="finder">
+            <div class="navy"></div>
+            <div class="cream"></div>
+            <div class="reticle"></div>
+            <div class="capture">
+              <div class="slots">
+                <div class="slot"><div class="mini navy"></div>A · Navy label · #1A2A4A</div>
+                <div class="slot on"><div class="mini cream"></div>B · Cream thread · #F1E5C8</div>
+              </div>
+              <div class="cta">Sample color B</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="swatches">
+              <div><div class="chip navy"></div><div class="label">Navy label</div><div class="hex">#1A2A4A</div></div>
+              <div><div class="chip cream"></div><div class="label">Cream thread</div><div class="hex">#F1E5C8</div></div>
+            </div>
+            <div class="ratio">12.63:1</div>
+            <div class="badge">Easy to tell apart</div>
+            <p class="copy">Easy to tell apart, even on small labels or fine thread.</p>
+            <div class="preview">WORKSHOP</div>
+            <div class="checks">
+              <div class="ok">✓ AA body / labels 4.5:1</div>
+              <div class="ok">✓ AAA body / labels 7:1</div>
+            </div>
+            <p class="fine">Readings are estimates affected by lighting. Contrast Scout is not a safety certification.</p>
+            <div class="actions">
+              <div class="pill outline">Swap</div>
+              <div class="pill filled">Share report</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <section class="shot landscape" id="l-notebook">
+    <aside class="sidebar">
+      <div class="brand">Contrast Scout</div>
+      <div class="nav-item"><span class="glyph">⌖</span>Scout</div>
+      <div class="nav-item on"><span class="glyph">☰</span>Notebook</div>
+      <div class="nav-item"><span class="glyph">◎</span>Simulate</div>
+      <div class="nav-item"><span class="glyph">···</span>More</div>
+    </aside>
+    <main class="detail">
+      <div class="status"><span>9:41</span><span>●●●● Wi‑Fi</span></div>
+      <div class="navbar"><span>Notebook</span><div class="tools" style="font-size:26px;font-weight:700;">Save current</div></div>
+      <div class="body">
+        <div class="card" style="margin-bottom:20px;">
+          <h2>Physical swatches, kept on device</h2>
+          <p class="copy">Save thread, paint, and signage chips in a shop notebook. Camera samples stay on this iPad.</p>
+        </div>
+        <div class="grid" style="grid-template-columns: repeat(4, 1fr);">
+          <div class="card"><div class="sw navy"></div><h2>Navy label</h2><p class="hex">#1A2A4A</p></div>
+          <div class="card"><div class="sw cream"></div><h2>Cream thread</h2><p class="hex">#F1E5C8</p></div>
+          <div class="card"><div class="sw barn"></div><h2>Barn-red paint</h2><p class="hex">#B03026</p></div>
+          <div class="card"><div class="sw sage"></div><h2>Sage signage</h2><p class="hex">#8BA582</p></div>
+        </div>
+      </div>
+    </main>
+  </section>
+</body>
+</html>

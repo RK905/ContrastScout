@@ -10,3 +10,25 @@ website/node_modules/
 .dev.vars
 *.ipa
 *.dSYM.zip
+
+# added during private archive
+# archive-script additions
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env.*
+!.env.example
+!.env.sample
+cdk.out/
+.next/
+dist/
+coverage/
+.turbo/
+Pods/
+*.log
+release/
+*.app/
+.idea/
+.vscode/
+*.sst

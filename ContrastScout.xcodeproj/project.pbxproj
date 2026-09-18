@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A3152C8A30327C8800D41C3B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3152C8930327C8800D41C3B /* StoreKit.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		A3152C4A30317C0C00D41C3B /* ContrastScout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContrastScout.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3152C8930327C8800D41C3B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -37,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3152C8A30327C8800D41C3B /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				A3152C4C30317C0C00D41C3B /* ContrastScout */,
+				A3152C8830327C8800D41C3B /* Frameworks */,
 				A3152C4B30317C0C00D41C3B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +64,14 @@
 				A3152C4A30317C0C00D41C3B /* ContrastScout.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A3152C8830327C8800D41C3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3152C8930327C8800D41C3B /* StoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
